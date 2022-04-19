@@ -117,7 +117,7 @@
 }
 
 .sidebar .nav-links li a .link-name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     color: #fff;
 }
@@ -140,7 +140,7 @@
 
 .sidebar .nav-links li .sub-menu a {
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     padding: 5px 0;
     white-space: nowrap;
     opacity: 0.6;
@@ -307,6 +307,7 @@ font-size: 35px;
 }
 
 .home-content .overview-boxes {
+    margin-top: 15px;
     display: flex;
     width: 100%;
     justify-content: space-between;
@@ -358,4 +359,27 @@ font-size: 35px;
     line-height: 50px;
     text-align: center;
     border-radius: 12px;
+}
+
+
+
+
+.home-content .overview-box {
+    display: flex;
+    width: 100%;
+    padding: 0 15px;
+}
+
+.home-content .overview-box .box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding: 15px 14px;
+    border-radius: 12px;
+}
+
+.home-content .overview-box .box-topic{
+    font-size: 20px;
+    font-weight: 500;
 }
