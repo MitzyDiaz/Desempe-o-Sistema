@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- === Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style-login.css">
+</head>
+<body>
+    
+    <div class="cont">
+        <div class="forms">
+            <div class="form login">
+                <div class="logo">
+                    <img src="image/logo.png" alt="" width="35%">
+                </div>
+                <span class="title">Login</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Ingresa tu correo" required>
+                        <i class='bx bxs-envelope'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Ingresa tu contraseña" required>
+                        <i class='bx bxs-lock-alt' ></i>
+                        <i class='bx bx-hide showHidePw'></i>
+                    </div>
+
+                    <div class="checkbox-text">
+                        <a href="#" class="text">¿Olvidaste tu contraseña?</a>
+                    </div>
+
+                    <div class="input-field button">
+                        <a href="index.html">
+                            <input type="button" value="Ingresa">
+                        </a>
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">¿No tienes cuenta?
+                        <a href="#" class="text signup-link">Registrate</a>
+                    </span>
+                </div>
+            </div>
+
+            <!-- FORMULARIO DE REGISTRO-->
+            <div class="form signup">
+                <div class="logo">
+                    <img src="image/logo.png" alt="" width="35%">
+                </div>
+                <span class="title">Registro</span>
+
+                <form action="#">
+                    <div class="input-field">
+                        <input type="text" placeholder="Ingresa tu nombre" required>
+                        <i class='bx bxs-user icon'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Ingresa tu correo" required>
+                        <i class='bx bxs-envelope icon'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Crea una contraseña" required>
+                        <i class='bx bxs-lock-alt icon'></i>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" class="password" placeholder="Confirma la contraseña" required>
+                        <i class='bx bxs-lock-alt icon'></i>
+                        <i class="bx bx-hide showHidePw"></i>
+                    </div>
+
+                    
+                    <!--
+                        CONTRASEÑA OLVIDADA
+                        <div class="checkbox-text">
+                        <a href="#" class="text">Forgot password?</a>
+                    </div>-->
+
+                    <div class="input-field button">
+                        <input type="button" value="Registrate">
+                    </div>
+                </form>
+
+                <div class="login-signup">
+                    <span class="text">¿Ya estas registrado?
+                        <a href="#" class="text login-link">Ingresa</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+const cont = document.querySelector(".cont"),
+      pwShowHide = document.querySelectorAll(".showHidePw"),
+      pwFields = document.querySelectorAll(".password"),
+      signUp = document.querySelector(".signup-link"),
+      login = document.querySelector(".login-link");
+
+    //   js code to show/hide password and change icon
+    pwShowHide.forEach(eyeIcon =>{
+        eyeIcon.addEventListener("click", ()=>{
+            pwFields.forEach(pwField =>{
+                if(pwField.type ==="password"){
+                    pwField.type = "text";
+
+                    pwShowHide.forEach(icon =>{
+                        icon.classList.replace("bx-hide", "bx-show");
+                    })
+                }else{
+                    pwField.type = "password";
+
+                    pwShowHide.forEach(icon =>{
+                        icon.classList.replace("bx-show", "bx-hide");
+                    })
+                }
+            }) 
+        })
+    })
+
+    // js code to appear signup and login form
+    signUp.addEventListener("click", ( )=>{
+        cont.classList.add("active");
+    });
+    login.addEventListener("click", ( )=>{
+        cont.classList.remove("active");
+    });
+
+    </script>
+
+</body>
+</html>
